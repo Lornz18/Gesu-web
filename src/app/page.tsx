@@ -130,10 +130,6 @@ export default function SchoolHomepage() {
                   Enroll Now
                   <ChevronRight className="w-5 h-5 ml-2" />
                 </button>
-                <button className="cursor-pointer border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center">
-                  <Play className="w-5 h-5 mr-2" />
-                  Watch Tour
-                </button>
               </div>
 
               <div className="flex items-center space-x-8 pt-4">
