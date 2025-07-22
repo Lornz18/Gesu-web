@@ -11,8 +11,7 @@ import {
   Mail,
   MapPin,
   Star,
-  ArrowRight,
-  Play,
+  ArrowRight
 } from "lucide-react";
 import Image from "next/image";
 

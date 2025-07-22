@@ -194,10 +194,10 @@ export default function AboutPage() {
               <div className="w-16 h-1 bg-secondary mx-auto"></div>
             </div>
             <blockquote className="text-lg text-foreground/90 leading-relaxed text-center italic">
-              "Education is not preparation for life; education is life itself. At our institution, 
+              &quot;Education is not preparation for life; education is life itself. At our institution, 
               we believe in nurturing not just academic excellence, but also character, creativity, 
               and critical thinking. Every student who walks through our doors is valued, supported, 
-              and empowered to reach their full potential."
+              and empowered to reach their full potential.&quot;
             </blockquote>
             <div className="text-center mt-6">
               <div className="font-semibold text-foreground">Dr. Sarah Johnson</div>
