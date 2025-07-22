@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronRight, BookOpen, Users, Award, Calendar, Phone, Mail, MapPin, Star, ArrowRight, Play, CheckCircle } from 'lucide-react';
+import { ChevronRight, BookOpen, Users, Award, Calendar, Phone, Mail, MapPin, Star, ArrowRight, Play } from 'lucide-react';
+import Image from 'next/image';
 
 export default function SchoolHomepage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -129,7 +130,7 @@ export default function SchoolHomepage() {
             <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/80 rounded-3xl rotate-6 opacity-20"></div>
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
                   alt="Students in modern classroom"
                   className="relative rounded-3xl shadow-2xl w-full h-96 object-cover"
@@ -152,7 +153,7 @@ export default function SchoolHomepage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose NextGen Academy?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing world-class education that prepares students for tomorrow's challenges
+              We&apos;re committed to providing world-class education that prepares students for tomorrow&apos;s challenges
             </p>
           </div>
           
@@ -222,7 +223,7 @@ export default function SchoolHomepage() {
                 ))}
               </div>
               <blockquote className="text-xl md:text-2xl font-medium mb-6 leading-relaxed">
-                "{testimonialSlides[currentSlide].text}"
+                &apos;{testimonialSlides[currentSlide].text}&apos;
               </blockquote>
               <div>
                 <div className="font-bold text-lg">{testimonialSlides[currentSlide].author}</div>
