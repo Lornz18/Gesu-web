@@ -13,9 +13,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
+            <Link href="/" className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-lg">G</span>
-            </div>
+            </Link>
           </div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
@@ -26,16 +26,10 @@ const Header = () => {
               About
             </Link>
             <Link
-              href="/about"
+              href="/academic"
               className="px-4 py-2 text-gray-700 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200 font-medium"
             >
               Academic Programs / Curriculum
-            </Link>
-            <Link
-              href="/about"
-              className="px-4 py-2 text-gray-700 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200 font-medium"
-            >
-              Faculty & Staff
             </Link>
             <Link
               href="/contact"
@@ -44,6 +38,7 @@ const Header = () => {
               Contact Us
             </Link>
           </nav>
+          <Link href="/enroll" className="text-white bg-primary/80 py-2 px-5 rounded-2xl shadow hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300">Enroll now</Link>
         </div>
 
         {/* Mobile Navigation */}

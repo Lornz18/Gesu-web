@@ -6,14 +6,14 @@ import {
   BookOpen,
   Users,
   Award,
-  Calendar,
   Phone,
   Mail,
   MapPin,
-  Star,
-  ArrowRight
+  Star
 } from "lucide-react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function SchoolHomepage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,6 +25,13 @@ export default function SchoolHomepage() {
       setCurrentSlide((prev) => (prev + 1) % 3);
     }, 5000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-quad",
+      duration: 800,
+    });
   }, []);
 
   const highlights = [
@@ -44,27 +51,6 @@ export default function SchoolHomepage() {
       title: "Modern Curriculum",
       description:
         "STEM-focused programs with AI, robotics, and digital literacy integration",
-    },
-  ];
-
-  const announcements = [
-    {
-      date: "July 25, 2025",
-      title: "New Semester Registration Opens",
-      description: "Early bird discounts available until August 15th",
-      urgent: true,
-    },
-    {
-      date: "August 1, 2025",
-      title: "Virtual Campus Tour",
-      description: "Join our interactive online tour every Saturday at 10 AM",
-      urgent: false,
-    },
-    {
-      date: "July 28, 2025",
-      title: "Science Fair Winners Announced",
-      description: "Congratulations to our outstanding student innovators",
-      urgent: false,
     },
   ];
 
@@ -175,19 +161,20 @@ export default function SchoolHomepage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose NextGen Academy?
+            <h2 data-aos="fade-up"  className="text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Us?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p data-aos="fade-up"  className="text-xl text-gray-600 max-w-3xl mx-auto">
               We&apos;re committed to providing world-class education that
               prepares students for tomorrow&apos;s challenges
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div data-aos="fade-up"  className="grid md:grid-cols-3 gap-8">
             {highlights.map((highlight, index) => (
               <div
                 key={index}
+                
                 className="group p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -205,66 +192,19 @@ export default function SchoolHomepage() {
         </div>
       </section>
 
-      {/* Announcements */}
-      <section className="py-20 bg-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Latest Announcements
-            </h2>
-            <p className="text-xl text-gray-600">
-              Stay updated with our latest news and events
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {announcements.map((announcement, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-1"
-              >
-                {announcement.urgent && (
-                  <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 text-sm font-medium">
-                    🔥 URGENT
-                  </div>
-                )}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-primary font-medium text-sm">
-                      {announcement.date}
-                    </span>
-                    <Calendar className="w-5 h-5 text-gray-400" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary/50 transition-colors">
-                    {announcement.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {announcement.description}
-                  </p>
-                  <button className="text-primary font-medium hover:text-blue-700 flex items-center transition-colors">
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 data-aos="fade-up"  className="text-4xl font-bold text-gray-900 mb-4">
               What Our Community Says
             </h2>
-            <p className="text-xl text-gray-600">
+            <p data-aos="fade-up"  className="text-xl text-gray-600">
               Hear from our students, parents, and partners
             </p>
           </div>
 
-          <div className="relative">
+          <div data-aos="fade-up"  className="relative">
             <div className="bg-primary/80 rounded-3xl p-8 text-white text-center">
               <div className="flex justify-center mb-4">
                 {[...Array(testimonialSlides[currentSlide].rating)].map(
@@ -307,16 +247,16 @@ export default function SchoolHomepage() {
       {/* CTA Section */}
       <section className="py-20 bg-primary/10 text-black/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 data-aos="fade-up"  className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Begin Your Journey?
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+          <p data-aos="fade-up"  className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
             Join our global community of learners and unlock your potential with
             personalized education, cutting-edge technology, and world-class
             mentorship.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <div data-aos="fade-up"  className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <button className="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Enroll Now - Limited Seats
             </button>
@@ -325,7 +265,7 @@ export default function SchoolHomepage() {
             </button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div data-aos="fade-up"  className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="flex items-center justify-center space-x-3">
               <Phone className="w-6 h-6" />
               <span className="font-medium">+1 (555) 123-4567</span>
